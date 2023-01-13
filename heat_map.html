@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_935125720dd1efeb735547b43f1cd1b0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_935125720dd1efeb735547b43f1cd1b0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_935125720dd1efeb735547b43f1cd1b0 = L.map(
+                "map_935125720dd1efeb735547b43f1cd1b0",
+                {
+                    center: [48.840378, 2.392925],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c4f2874006f70c29aacb631955e0aec5 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_935125720dd1efeb735547b43f1cd1b0);
+        
+    
+            var marker_40ba8380619ee27140f79d32197eb8a4 = L.marker(
+                [48.840378, 2.392925],
+                {}
+            ).addTo(map_935125720dd1efeb735547b43f1cd1b0);
+        
+    
+        var popup_845f615fd83e3f87c49b1cc61283848e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b245858eaa5c5a4e02ccc8d5b1e570f2 = $(`<div id="html_b245858eaa5c5a4e02ccc8d5b1e570f2" style="width: 100.0%; height: 100.0%;"><i>183 Avenue Daumesnil</i></div>`)[0];
+                popup_845f615fd83e3f87c49b1cc61283848e.setContent(html_b245858eaa5c5a4e02ccc8d5b1e570f2);
+            
+        
+
+        marker_40ba8380619ee27140f79d32197eb8a4.bindPopup(popup_845f615fd83e3f87c49b1cc61283848e)
+        ;
+
+        
+    
+    
+            var marker_3746e7c58dc693c51765407dc462dbd1 = L.marker(
+                [48.827357, 2.371647],
+                {}
+            ).addTo(map_935125720dd1efeb735547b43f1cd1b0);
+        
+    
+        var popup_c692236d269b4eb42f912c02295d71b1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_431f1f9bad35e30e76da60b23567edcd = $(`<div id="html_431f1f9bad35e30e76da60b23567edcd" style="width: 100.0%; height: 100.0%;"><i>107 Rue de Patay</i></div>`)[0];
+                popup_c692236d269b4eb42f912c02295d71b1.setContent(html_431f1f9bad35e30e76da60b23567edcd);
+            
+        
+
+        marker_3746e7c58dc693c51765407dc462dbd1.bindPopup(popup_c692236d269b4eb42f912c02295d71b1)
+        ;
+
+        
+    
+    
+            var marker_80ec1dce083560d2c2acdf18fa4f716c = L.marker(
+                [48.827964, 2.351655],
+                {}
+            ).addTo(map_935125720dd1efeb735547b43f1cd1b0);
+        
+    
+        var popup_137e43c34547654b177464a46014fcfc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9b04cee3a5bafa4319ffffd31aab112d = $(`<div id="html_9b04cee3a5bafa4319ffffd31aab112d" style="width: 100.0%; height: 100.0%;"><i>10 Rue de la Butte aux Cailles</i></div>`)[0];
+                popup_137e43c34547654b177464a46014fcfc.setContent(html_9b04cee3a5bafa4319ffffd31aab112d);
+            
+        
+
+        marker_80ec1dce083560d2c2acdf18fa4f716c.bindPopup(popup_137e43c34547654b177464a46014fcfc)
+        ;
+
+        
+    
+    
+            var marker_2c5f54347e9ffd1bfb1729deea4aa99d = L.marker(
+                [48.836048, 2.32414],
+                {}
+            ).addTo(map_935125720dd1efeb735547b43f1cd1b0);
+        
+    
+        var popup_b4c500f0c637c3ce3f0742ef911011c3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5baf2085fcfc5e450e1097aafad5b1e2 = $(`<div id="html_5baf2085fcfc5e450e1097aafad5b1e2" style="width: 100.0%; height: 100.0%;"><i>96 Rue Daguerre</i></div>`)[0];
+                popup_b4c500f0c637c3ce3f0742ef911011c3.setContent(html_5baf2085fcfc5e450e1097aafad5b1e2);
+            
+        
+
+        marker_2c5f54347e9ffd1bfb1729deea4aa99d.bindPopup(popup_b4c500f0c637c3ce3f0742ef911011c3)
+        ;
+
+        
+    
+    
+            var marker_650112b9920611b2711f4077ead31849 = L.marker(
+                [48.855208, 2.330718],
+                {}
+            ).addTo(map_935125720dd1efeb735547b43f1cd1b0);
+        
+    
+        var popup_f99e0e0aff653de769b2211ac20a6df6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_307666777870f921f5d81cd8484c4764 = $(`<div id="html_307666777870f921f5d81cd8484c4764" style="width: 100.0%; height: 100.0%;"><i>32 Rue des Saints-Peres</i></div>`)[0];
+                popup_f99e0e0aff653de769b2211ac20a6df6.setContent(html_307666777870f921f5d81cd8484c4764);
+            
+        
+
+        marker_650112b9920611b2711f4077ead31849.bindPopup(popup_f99e0e0aff653de769b2211ac20a6df6)
+        ;
+
+        
+    
+    
+            var marker_defd13f70269e5423c975141eeb7e018 = L.marker(
+                [48.884347, 2.349094],
+                {}
+            ).addTo(map_935125720dd1efeb735547b43f1cd1b0);
+        
+    
+        var popup_712ce6f664a9e23093de49ab326a687f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a90d028ab4cc177093cea7522a4f8d89 = $(`<div id="html_a90d028ab4cc177093cea7522a4f8d89" style="width: 100.0%; height: 100.0%;"><i>4 Rue Boissieu</i></div>`)[0];
+                popup_712ce6f664a9e23093de49ab326a687f.setContent(html_a90d028ab4cc177093cea7522a4f8d89);
+            
+        
+
+        marker_defd13f70269e5423c975141eeb7e018.bindPopup(popup_712ce6f664a9e23093de49ab326a687f)
+        ;
+
+        
+    
+    
+            var marker_6f9567bbf354a9dfe9ce9a1d8d7944d3 = L.marker(
+                [48.871466, 2.341826],
+                {}
+            ).addTo(map_935125720dd1efeb735547b43f1cd1b0);
+        
+    
+        var popup_84aee95eb9c1349c79d789a7413c626a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ed2ae91087c4b8c567f29cdcbe973672 = $(`<div id="html_ed2ae91087c4b8c567f29cdcbe973672" style="width: 100.0%; height: 100.0%;"><i>56 Passage des Panoramas</i></div>`)[0];
+                popup_84aee95eb9c1349c79d789a7413c626a.setContent(html_ed2ae91087c4b8c567f29cdcbe973672);
+            
+        
+
+        marker_6f9567bbf354a9dfe9ce9a1d8d7944d3.bindPopup(popup_84aee95eb9c1349c79d789a7413c626a)
+        ;
+
+        
+    
+    
+            var marker_59cea3f87a9aa337d19d58f96c9a739a = L.marker(
+                [48.877498, 2.338302],
+                {}
+            ).addTo(map_935125720dd1efeb735547b43f1cd1b0);
+        
+    
+        var popup_449b624a1ff383994faf6194dbdd76d3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a688aedcb492d6dd22b8050cc372f924 = $(`<div id="html_a688aedcb492d6dd22b8050cc372f924" style="width: 100.0%; height: 100.0%;"><i>11 Rue Notre-Dame de Lorette</i></div>`)[0];
+                popup_449b624a1ff383994faf6194dbdd76d3.setContent(html_a688aedcb492d6dd22b8050cc372f924);
+            
+        
+
+        marker_59cea3f87a9aa337d19d58f96c9a739a.bindPopup(popup_449b624a1ff383994faf6194dbdd76d3)
+        ;
+
+        
+    
+    
+            var marker_0c322f5218ddce22a468aa1e527c859b = L.marker(
+                [48.876488, 2.31764],
+                {}
+            ).addTo(map_935125720dd1efeb735547b43f1cd1b0);
+        
+    
+        var popup_9305eae74dce729739b777da0e9c3765 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fb69dc4600723a43fd9a6a81ec93af93 = $(`<div id="html_fb69dc4600723a43fd9a6a81ec93af93" style="width: 100.0%; height: 100.0%;"><i>65 Boulevard Malesherbes</i></div>`)[0];
+                popup_9305eae74dce729739b777da0e9c3765.setContent(html_fb69dc4600723a43fd9a6a81ec93af93);
+            
+        
+
+        marker_0c322f5218ddce22a468aa1e527c859b.bindPopup(popup_9305eae74dce729739b777da0e9c3765)
+        ;
+
+        
+    
+    
+            var marker_aa44f3913665fb350b06f1fafb11c98d = L.marker(
+                [48.870137, 2.305385],
+                {}
+            ).addTo(map_935125720dd1efeb735547b43f1cd1b0);
+        
+    
+        var popup_a0c38f49b25270aac6d5ca7d63998766 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f70d20525aa3255c82bca0c8b4dc26e0 = $(`<div id="html_f70d20525aa3255c82bca0c8b4dc26e0" style="width: 100.0%; height: 100.0%;"><i>53 Avenue des Champs-Elysees</i></div>`)[0];
+                popup_a0c38f49b25270aac6d5ca7d63998766.setContent(html_f70d20525aa3255c82bca0c8b4dc26e0);
+            
+        
+
+        marker_aa44f3913665fb350b06f1fafb11c98d.bindPopup(popup_a0c38f49b25270aac6d5ca7d63998766)
+        ;
+
+        
+    
+    
+            var poly_line_f3ba1b3b545d66f1c5304bfd2f753c50 = L.polyline(
+                [[48.840378, 2.392925], [48.827357, 2.371647], [48.827964, 2.351655], [48.836048, 2.32414], [48.855208, 2.330718], [48.884347, 2.349094], [48.871466, 2.341826], [48.877498, 2.338302], [48.876488, 2.31764], [48.870137, 2.305385], [48.840378, 2.392925]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_935125720dd1efeb735547b43f1cd1b0);
+        
+</script>
+</html>
