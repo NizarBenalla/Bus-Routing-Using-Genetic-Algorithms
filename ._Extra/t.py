@@ -1,4 +1,4 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtGui, QtWidgets , QtCore
 from PyQt5.QtWebEngineWidgets import QWebEngineView # pip install PyQtWebEngine
 import sys
 import io
@@ -7,13 +7,11 @@ import random
 import pandas as pd
 from geopy import distance,geocoders,Nominatim # to calculate distance on the surface
 import folium
-from folium.plugins import MarkerCluster
 from datetime import datetime
-import time
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
-        Dialog.setObjectName("Calcule de plus court chemin")
+        Dialog.setObjectName("Dialog")
         Dialog.resize(1131, 678)
         self.frame = QtWidgets.QFrame(Dialog)
         self.frame.setGeometry(QtCore.QRect(0, 0, 1131, 681))
@@ -54,69 +52,30 @@ class Ui_Dialog(object):
         self.pushButton.setStyleSheet("background-color:rgb(79, 200, 255);\n"
 "color:#fff;\n"
 "font-weight:bold;\n"
-"border:5 px solid #eee;\n"
-"border-radius: 8px")
+"border:5 px solid #eee")
         self.pushButton.setCheckable(True)
         self.pushButton.setDefault(True)
         self.pushButton.setObjectName("pushButton")
         self.pushButton.setEnabled(False)
         self.label_3 = QtWidgets.QLabel(self.frame)
-        self.label_3.setGeometry(QtCore.QRect(50, 510, 141, 31))
+        self.label_3.setGeometry(QtCore.QRect(50, 470, 141, 31))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.label_3.setFont(font)
-        self.label_3.setStyleSheet("color:#888")
+        self.label_3.setStyleSheet("color:rgb(113, 113, 113)")
         self.label_3.setObjectName("label_3")
         self.pushButton_2 = QtWidgets.QPushButton(self.frame)
-        self.pushButton_2.setGeometry(QtCore.QRect(230, 510, 181, 41))
+        self.pushButton_2.setGeometry(QtCore.QRect(200, 470, 181, 41))
         self.pushButton_2.setAutoFillBackground(False)
         self.pushButton_2.setStyleSheet("background-color:rgb(79, 200, 255);\n"
 "color:#fff;\n"
 "font-weight:bold;\n"
-"border-radius: 5px;\n"
 "border:5 px solid #eee")
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_2.clicked.connect(self.upload)
 
         self.label_5 = QtWidgets.QLabel(self.frame)
         self.label_5.setGeometry(QtCore.QRect(740, 540, 200, 41))
-        self.label_6 = QtWidgets.QLabel(self.frame)
-        self.label_6.setGeometry(QtCore.QRect(50, 140, 431, 41))
-        font = QtGui.QFont()
-        font.setPointSize(9)
-        font.setBold(True)
-        self.label_6.setFont(font)
-        self.label_6.setStyleSheet("color:#888")
-        self.label_6.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
-        self.label_6.setObjectName("label_6")
-        self.label_7 = QtWidgets.QLabel(self.frame)
-        self.label_7.setGeometry(QtCore.QRect(50, 170, 391, 201))
-        self.label_7.setStyleSheet("color:#888;")
-        self.label_7.setObjectName("label_7")
-        self.lineEdit = QtWidgets.QLineEdit(self.frame)
-        self.lineEdit.setGeometry(QtCore.QRect(230, 460, 181, 31))
-        self.lineEdit.setObjectName("lineEdit")
-        self.label_8 = QtWidgets.QLabel(self.frame)
-        self.label_8.setGeometry(QtCore.QRect(50, 460, 151, 31))
-        font = QtGui.QFont()
-        font.setPointSize(9)
-        font.setBold(True)
-        self.label_8.setFont(font)
-        self.label_8.setStyleSheet("color:#888")
-        self.label_8.setObjectName("label_8")
-        self.label_9 = QtWidgets.QLabel(self.frame)
-        self.label_9.setGeometry(QtCore.QRect(50, 380, 151, 31))
-        font = QtGui.QFont()
-        font.setPointSize(9)
-        font.setBold(True)
-        self.label_9.setFont(font)
-        self.label_9.setStyleSheet("color:#888")
-        self.label_9.setObjectName("label_9")
-        self.label_10 = QtWidgets.QLabel(self.frame)
-        self.label_10.setGeometry(QtCore.QRect(180,380, 151, 31))
-        self.label_10.setStyleSheet("color:#888;")
-        self.label_10.setObjectName("label_10")
-        self.label_10.setFont(font)
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
@@ -130,27 +89,24 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Calcule de plus court chemin"))
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label_2.setText(_translate("Dialog", "L\'objectif du projet est de développer une application avec python permettant d’utiliser les algorithmes\n"
 "génétiques pour trouver la distance minimale du chemin effectué par le bus du ramassage scolaire."))
         self.label.setText(_translate("Dialog", "Final Projet"))
         self.pushButton.setText(_translate("Dialog", "Calculer le PCC"))
         self.label_3.setText(_translate("Dialog", "Upload le Dataset :"))
         self.pushButton_2.setText(_translate("Dialog", "Upload"))
-        self.label_5.setText(_translate("Dialog", ""))
-        self.label_6.setText(_translate("Dialog", ""))
-        self.label_7.setText(_translate("Dialog", ""))
-        self.lineEdit.setText('0.3')
-        self.label_8.setText(_translate("Dialog", "Taux de coisement:"))
-        self.label_9.setText(_translate("Dialog", ""))
-        self.label_10.setText(_translate("Dialog", ""))
+        self.label_5.setText(_translate("Dialog", "1ere iteration"))
         coordinate = (37.8199286, -122.4782551)
         self.m = folium.Map(
-            location=[48.8867, 2.3245], zoom_start=12
+            location=[53.073635, 8.806422], zoom_start=15, tiles='Stamen Terrain'
         )
         # save map data to data object
+        data = io.BytesIO()
+        self.m.save(data, close_file=False)
+
         self.webView = QWebEngineView(self.frame)
-        self.webView.setHtml(self.m.get_root().render())
+        self.webView.setHtml(data.getvalue().decode())
         self.webView.setGeometry(QtCore.QRect(520, 160, 501, 361))
 
     def upload(self):
@@ -166,25 +122,12 @@ class Ui_Dialog(object):
             # Initialiser le géolocalisateur en utilisant l'email de l'utilisateur comme agent
         geolocator = geocoders.Nominatim(user_agent="mail@myserver.com")
         # Initialiser une liste pour stocker les coordonnées
-        self.label_6.setText("Le Plus cours Chemin :")
-        self.label_9.setText("La distance total : ")
-        self.label_10.setText("0 Km")
-        self.label_6.update()
-        self.label_9.update()
-        self.label_10.update()
-        QtCore.QCoreApplication.processEvents()
+        
         coordinates_list=[]
         self.n_cities = 10
         self.n_population = 50
-        if isinstance(self.lineEdit.text(), int) or isinstance(self.lineEdit.text(), float):
-            self.mutation_rate = int(self.lineEdit.text())
-        else:
-            self.mutation_rate = 0.3
-            self.lineEdit.setText('0.3')
-            self.lineEdit.update()
-            QtCore.QCoreApplication.processEvents()
+        self.mutation_rate = 0.3
         df = pd.read_csv(self.fname)
-        df = df.sample(frac=1 , random_state=1).reset_index()
         # Récupérer la liste des noms de villes à partir d'un dataframe
         self.names_list = np.array(df['Street'].head(self.n_cities))
         # Boucler sur toutes les villes pour récupérer les coordonnées
@@ -314,18 +257,20 @@ class Ui_Dialog(object):
         return mutated_pop
     
     
-    def plot_map(self): 
-        if self.iteration!=0:
-            self.label_5.setText(f"iteration numero {self.iteration*100}")
-        
-        self.label_10.setText(f"{round(self.best_solution[1],3)} Km")
-        self.label_7.setText(str(self.best_road))
-        self.label_10.update()
-        self.label_7.update()
-        self.label_5.update()
-        QtCore.QCoreApplication.processEvents()
-        time.sleep(1)
-        
+    def plot_map(self):
+        self.m = folium.Map(
+            location=self.cities_dict[self.names_list[0]], zoom_start=15, tiles='Stamen Terrain'
+        )
+        loc = []
+        for el in self.best_road:
+            loc.append(self.cities_dict[el])
+            folium.Marker(
+              self.cities_dict[el], popup=f"<i>{el}</i>").add_to(self.m)
+        loc.append(self.cities_dict[self.best_road[0]])
+        # save map data to data object
+        data = io.BytesIO()
+        self.m.save(data, close_file=False)
+        self.webView.setHtml(data.getvalue().decode())
         
         
     def main(self):
@@ -336,7 +281,7 @@ class Ui_Dialog(object):
         new_population_set = self.mate_population(progenitor_list)
         mutated_pop = self.mutate_population(new_population_set)
         self.best_solution = [-1,np.inf,np.array([])]
-        self.iteration = 0
+        
         for i in range(1000):
             #Saving the best solution
             if fitnes_list.min() < self.best_solution[1]:
@@ -346,25 +291,13 @@ class Ui_Dialog(object):
             progenitor_list = self.progenitor_selection(population_set,fitnes_list)
             new_population_set = self.mate_population(progenitor_list)
             mutated_pop = self.mutate_population(new_population_set)
-            self.best_road = self.best_solution[2][0]
+            self.best_road = self.best_solution[2][0]  
             if i%100==0: 
-                self.iteration += 1
                 print(i, fitnes_list.min(), fitnes_list.mean(), datetime.now().strftime("%d/%m/%y %H:%M"))
                 self.plot_map()
+                print('hiii')
             fitnes_list = self.get_all_fitnes(mutated_pop,self.cities_dict)
-            
-        self.m.location = self.cities_dict[self.best_road[0]]
-        loc = []
-        for el in self.best_road:
-            loc.append(self.cities_dict[el])
-            folium.Marker(
-              self.cities_dict[el], popup=f"<i>{el}</i>").add_to(self.m)
-        loc.append(self.cities_dict[self.best_road[0]])
-        folium.PolyLine(loc,
-                color='blue',
-                weight=4,
-                opacity=0.9).add_to(self.m)
-        self.webView.setHtml(self.m.get_root().render())
+
             
 if __name__ == "__main__":
     import sys
