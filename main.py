@@ -10,7 +10,7 @@ import folium
 from folium.plugins import MarkerCluster
 from datetime import datetime
 import time
-
+import h3
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Calcule de plus court chemin")
@@ -197,7 +197,8 @@ class Ui_Dialog(object):
 
     # Fonction pour calculer la distance entre deux points
     def compute_city_distance_coordinates(self,a,b):
-        return distance.distance((a[0], a[1]), (b[0],b[1])).km
+        return h3.point_dist(a, b) # to get distance in meters
+
 
     # Fonction pour calculer la distance entre deux villes en utilisant les coordonnées stockées dans le dictionnaire
     def compute_city_distance_names(self,city_a, city_b, cities_dict):
@@ -329,7 +330,7 @@ class Ui_Dialog(object):
         
         
     def main(self):
-        self.init_geo();
+        self.init_geo()
         population_set = self.genesis(self.names_list, self.n_population)
         fitnes_list = self.get_all_fitnes(population_set,self.cities_dict)
         progenitor_list = self.progenitor_selection(population_set,fitnes_list)
