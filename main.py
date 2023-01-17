@@ -1,16 +1,11 @@
 import functools
-import math
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWebEngineWidgets import QWebEngineView  # pip install PyQtWebEngine
 import sys
-import io
 import numpy as np
-import random
 import pandas as pd
-from geopy import distance, geocoders, Nominatim  # to calculate distance on the surface
+from geopy import geocoders
 import folium
-from folium.plugins import MarkerCluster
 from datetime import datetime
 import time
 import h3
@@ -179,8 +174,8 @@ class Ui_Dialog(object):
         self.label_10.update()
         QtCore.QCoreApplication.processEvents()
         coordinates_list = []
-        self.n_cities = 18
-        self.n_population = 50
+        self.n_cities = 15
+        self.n_population = 500
         if isinstance(self.lineEdit.text(), int) or isinstance(self.lineEdit.text(), float):
             self.mutation_rate = int(self.lineEdit.text())
         else:
@@ -198,25 +193,23 @@ class Ui_Dialog(object):
             coordinates_list.append(list((location.latitude, location.longitude)))
         # Créer un dictionnaire pour stocker les noms de villes et les coordonnées
         self.cities_dict = {x: y for x, y in zip(self.names_list, coordinates_list)}
-        print(self.cities_dict)
         self.distances ={}
         self.create_distance_dict()
 
     # Fonction pour calculer la distance entre deux points
     def create_distance_dict(self):
-        # nested loop to iterate through all coordinates
         for point1, coord1 in self.cities_dict.items():
+            h3_coord1 = h3.geo_to_h3(coord1[0], coord1[1], 9)
             for point2, coord2 in self.cities_dict.items():
                 if point1 != point2:
-                    distance = math.dist(coord1, coord2)
+                    h3_coord2 = h3.geo_to_h3(coord2[0], coord2[1], 9)
+                    distance = h3.h3_distance(h3_coord1, h3_coord2)
                     self.distances[(point1, point2)] = distance
+
+    @functools.lru_cache(maxsize=None)
     def compute_city_distance_names(self, city_a, city_b):
-        if (city_a, city_b) in self.distances.keys():
-            return self.distances[(city_a, city_b)]
-        elif (city_b, city_a) in self.distances.keys():
-            return self.distances[(city_b, city_a)]
-        else:
-            raise ValueError(f"Distance between {city_a} and {city_b} not found in dictionary.")
+        return self.distances[(city_a, city_b)]
+
 
     def genesis(self, city_list, n_population):
         # Initialiser une liste vide pour stocker les solutions générées
@@ -336,6 +329,11 @@ class Ui_Dialog(object):
         time.sleep(1)
 
     def main(self):
+
+        import time
+        import sys
+
+        start_time = time.time()
         self.init_geo()
         population_set = self.genesis(self.names_list, self.n_population)
         fitnes_list = self.get_all_fitnes(population_set, self.cities_dict)
@@ -344,7 +342,7 @@ class Ui_Dialog(object):
         mutated_pop = self.mutate_population(new_population_set)
         self.best_solution = [-1, np.inf, np.array([])]
         self.iteration = 0
-        for i in range(1000):
+        for i in range(500):
             # Saving the best solution
             if fitnes_list.min() < self.best_solution[1]:
                 self.best_solution[0] = i
@@ -361,12 +359,16 @@ class Ui_Dialog(object):
             fitnes_list = self.get_all_fitnes(mutated_pop, self.cities_dict)
 
         self.m.location = self.cities_dict[self.best_road[0]]
+        end_time = time.time()
+        execution_time = end_time - start_time
+        print("Execution time: ", execution_time)
         loc = []
         for el in self.best_road:
+
             loc.append(self.cities_dict[el])
             folium.Marker(
                 self.cities_dict[el], popup=f"<i>{el}</i>").add_to(self.m)
-        loc.append(self.cities_dict[self.best_road[0]])
+        #loc.append(self.cities_dict[self.best_road[0]])
         folium.PolyLine(loc,
                         color='blue',
                         weight=4,
@@ -377,7 +379,6 @@ class Ui_Dialog(object):
 
 
 if __name__ == "__main__":
-    import sys
     app = QtWidgets.QApplication(sys.argv)
     Dialog = QtWidgets.QDialog()
     ui = Ui_Dialog()
