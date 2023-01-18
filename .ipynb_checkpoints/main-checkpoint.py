@@ -81,7 +81,7 @@ class Ui_Dialog(object):
         self.label_5 = QtWidgets.QLabel(self.frame)
         self.label_5.setGeometry(QtCore.QRect(740, 540, 200, 41))
         self.label_6 = QtWidgets.QLabel(self.frame)
-        self.label_6.setGeometry(QtCore.QRect(50, 120, 431, 41))
+        self.label_6.setGeometry(QtCore.QRect(50, 140, 431, 41))
         font = QtGui.QFont()
         font.setPointSize(9)
         font.setBold(True)
@@ -89,9 +89,8 @@ class Ui_Dialog(object):
         self.label_6.setStyleSheet("color:#888")
         self.label_6.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.label_6.setObjectName("label_6")
-        self.label_6.hide()
         self.label_7 = QtWidgets.QLabel(self.frame)
-        self.label_7.setGeometry(QtCore.QRect(50, 170, 391, 321))
+        self.label_7.setGeometry(QtCore.QRect(50, 170, 391, 201))
         self.label_7.setStyleSheet("color:#888;")
         self.label_7.setObjectName("label_7")
         self.lineEdit = QtWidgets.QLineEdit(self.frame)
@@ -106,21 +105,18 @@ class Ui_Dialog(object):
         self.label_8.setStyleSheet("color:#888")
         self.label_8.setObjectName("label_8")
         self.label_9 = QtWidgets.QLabel(self.frame)
-        self.label_9.setGeometry(QtCore.QRect(50, 460, 151, 31))
+        self.label_9.setGeometry(QtCore.QRect(50, 380, 151, 31))
         font = QtGui.QFont()
         font.setPointSize(9)
         font.setBold(True)
         self.label_9.setFont(font)
         self.label_9.setStyleSheet("color:#888")
         self.label_9.setObjectName("label_9")
-        self.label_7.hide()
-        self.label_9.hide()
         self.label_10 = QtWidgets.QLabel(self.frame)
-        self.label_10.setGeometry(QtCore.QRect(180, 460, 151, 31))
+        self.label_10.setGeometry(QtCore.QRect(180, 380, 151, 31))
         self.label_10.setStyleSheet("color:#888;")
         self.label_10.setObjectName("label_10")
         self.label_10.setFont(font)
-        self.label_10.hide()
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
@@ -128,39 +124,6 @@ class Ui_Dialog(object):
         self.label_5.setStyleSheet("color:#999")
         self.label_5.setAlignment(QtCore.Qt.AlignLeft)
         self.label_5.setObjectName("label_5")
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.frame)
-        self.lineEdit_2.setGeometry(QtCore.QRect(230, 420, 181, 31))
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.label_11 = QtWidgets.QLabel(self.frame)
-        self.label_11.setGeometry(QtCore.QRect(50, 420, 151, 31))
-        font = QtGui.QFont()
-        font.setPointSize(9)
-        font.setBold(True)
-        self.label_11.setFont(font)
-        self.label_11.setStyleSheet("color:#888")
-        self.label_11.setObjectName("label_11")
-        self.label_12 = QtWidgets.QLabel(self.frame)
-        self.label_12.setGeometry(QtCore.QRect(50, 380, 151, 31))
-        font = QtGui.QFont()
-        font.setPointSize(9)
-        font.setBold(True)
-        self.label_12.setFont(font)
-        self.label_12.setStyleSheet("color:#888")
-        self.label_12.setObjectName("label_12")
-        self.lineEdit_3 = QtWidgets.QLineEdit(self.frame)
-        self.lineEdit_3.setGeometry(QtCore.QRect(230, 380, 181, 31))
-        self.lineEdit_3.setObjectName("lineEdit_3")
-        self.lineEdit_4 = QtWidgets.QLineEdit(self.frame)
-        self.lineEdit_4.setGeometry(QtCore.QRect(230, 340, 181, 31))
-        self.lineEdit_4.setObjectName("lineEdit_4")
-        self.label_13 = QtWidgets.QLabel(self.frame)
-        self.label_13.setGeometry(QtCore.QRect(50, 340, 151, 31))
-        font = QtGui.QFont()
-        font.setPointSize(9)
-        font.setBold(True)
-        self.label_13.setFont(font)
-        self.label_13.setStyleSheet("color:#888")
-        self.label_13.setObjectName("label_13")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -171,7 +134,7 @@ class Ui_Dialog(object):
         self.label_2.setText(_translate("Dialog",
                                         "L\'objectif du projet est de développer une application avec python permettant d’utiliser les algorithmes\n"
                                         "génétiques pour trouver la distance minimale du chemin effectué par le bus du ramassage scolaire."))
-        self.label.setText(_translate("Dialog", "Projet Final"))
+        self.label.setText(_translate("Dialog", "Final Projet"))
         self.pushButton.setText(_translate("Dialog", "Calculer le PCC"))
         self.label_3.setText(_translate("Dialog", "Upload le Dataset :"))
         self.pushButton_2.setText(_translate("Dialog", "Upload"))
@@ -179,15 +142,9 @@ class Ui_Dialog(object):
         self.label_6.setText(_translate("Dialog", ""))
         self.label_7.setText(_translate("Dialog", ""))
         self.lineEdit.setText('0.3')
-        self.lineEdit_2.setText('500')
-        self.lineEdit_3.setText('100')
-        self.lineEdit_4.setText('10')
         self.label_8.setText(_translate("Dialog", "Taux de coisement:"))
         self.label_9.setText(_translate("Dialog", ""))
         self.label_10.setText(_translate("Dialog", ""))
-        self.label_11.setText(_translate("Dialog", "nombre d\'iteration"))
-        self.label_12.setText(_translate("Dialog", "Population"))
-        self.label_13.setText(_translate("Dialog", "Le nombre d\'eleves"))
         coordinate = (37.8199286, -122.4782551)
         self.m = folium.Map(
             location=[48.8867, 2.3245], zoom_start=12
@@ -221,67 +178,29 @@ class Ui_Dialog(object):
         self.label_6.update()
         self.label_9.update()
         self.label_10.update()
-        self.lineEdit.hide()
-        self.lineEdit_2.hide()
-        self.lineEdit_3.hide()
-        self.lineEdit_4.hide()
-        self.label_8.hide()
-        self.label_11.hide()
-        self.label_12.hide()
-        self.label_13.hide()
-        self.label_6.show()
-        self.label_9.show()
-        self.label_10.show()
         QtCore.QCoreApplication.processEvents()
         coordinates_list = []
-        self.n_cities = 10
-        self.n_population = 100
-        self.mutation_rate = 0.3
-        self.nombre_iteration = 500
-        # traitement sur le mutation_rate
+        self.n_cities = 15
+        self.n_population = 50
         if self.is_number(self.lineEdit.text()):
             self.mutation_rate = float(self.lineEdit.text())
         else:
             self.mutation_rate = 0.3
             self.lineEdit.setText('0.3')
             self.lineEdit.update()
-        # traitement sur le n_cities 
-        if self.is_number(self.lineEdit_4.text()):
-            self.n_cities = int(self.lineEdit_4.text())
-        else:
-            self.n_cities = 10
-            self.lineEdit_4.setText('10')
-            self.lineEdit_4.update()
-        # traitement sur le n_population  
-        if self.is_number(self.lineEdit_3.text()):
-            self.n_population = int(self.lineEdit_3.text())
-        else:
-            self.n_population = 100
-            self.lineEdit_3.setText('100')
-            self.lineEdit_3.update()
-            
-        if self.is_number(self.lineEdit_2.text()):
-            self.nombre_iteration = int(self.lineEdit_2.text())
-        else:
-            self.nombre_iteration = 500
-            self.lineEdit_2.setText('500')
-            self.lineEdit_2.update()
             QtCore.QCoreApplication.processEvents()
         df = pd.read_csv(self.fname)
         df = df.sample(frac=1, random_state=1).reset_index()
         # Récupérer la liste des noms de villes à partir d'un dataframe
-        self.df = df[['Street', 'Full Name']].head(self.n_cities)
-        self.names_list = np.array(self.df['Street'])
+        self.names_list = np.array(df['Street'].head(self.n_cities))
         # Boucler sur toutes les villes pour récupérer les coordonnées
         for city in self.names_list:
             location = geolocator.geocode(city)
             coordinates_list.append(list((location.latitude, location.longitude)))
         # Créer un dictionnaire pour stocker les noms de villes et les coordonnées
         self.cities_dict = {x: y for x, y in zip(self.names_list, coordinates_list)}
-        self.names = {x: y for x, y in zip(self.df['Street'] , self.df['Full Name'])}
         self.distances ={}
         self.create_distance_dict()
-        print(self.names)
     # Fonction pour calculer la distance entre deux points
     def create_distance_dict(self):
         for point1, coord1 in self.cities_dict.items():
@@ -407,16 +326,10 @@ class Ui_Dialog(object):
             self.label_5.setText(f"iteration numero {self.iteration * 100}")
 
         self.label_10.setText(f"{round(self.best_solution[1], 3)} Km")
-        str_fin = ''
-        for ix,el in enumerate(self.best_road):
-            str_fin += f'{ix+1}- {self.names[el]}, '
-            if (ix+1)%2==0:
-                str_fin += '\n'
-        self.label_7.setText(str_fin)
+        self.label_7.setText(str(self.best_road))
         self.label_10.update()
         self.label_7.update()
         self.label_5.update()
-        self.label_7.show()
         QtCore.QCoreApplication.processEvents()
         time.sleep(1)
 
@@ -434,7 +347,7 @@ class Ui_Dialog(object):
         mutated_pop = self.mutate_population(new_population_set)
         self.best_solution = [-1, np.inf, np.array([])]
         self.iteration = 0
-        for i in range(self.nombre_iteration):
+        for i in range(500):
             # Saving the best solution
             if fitnes_list.min() < self.best_solution[1]:
                 self.best_solution[0] = i
@@ -466,8 +379,6 @@ class Ui_Dialog(object):
                         weight=4,
                         opacity=0.9).add_to(self.m)
         self.webView.setHtml(self.m.get_root().render())
-        self.webView.update()
-        QtCore.QCoreApplication.processEvents()
 
 
 
