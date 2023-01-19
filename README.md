@@ -23,4 +23,4 @@
 Un jeu de données contenant 10 adresses éloignées ()
 Un autre jeu de données contenant 500 adresses à Paris ()
 
-~~ Nous vous conseillons de tester les différentes options et de jouer avec les paramètres pour obtenir les meilleurs résultats. N'hésitez pas à nous contacter en cas de problème ou pour toute suggestion d'amélioration. ~~
+~Nous vous conseillons de tester les différentes options et de jouer avec les paramètres pour obtenir les meilleurs résultats. N'hésitez pas à nous contacter en cas de problème ou pour toute suggestion d'amélioration.~
