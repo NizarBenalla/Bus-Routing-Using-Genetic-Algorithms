@@ -226,6 +226,7 @@ class Ui_Dialog(object):
             return False
 
     def init_geo(self):
+        self.start_time = time.time()
         # Initialiser le géolocalisateur en utilisant l'email de l'utilisateur comme agent
         geolocator = geocoders.Nominatim(user_agent="mail@myserver.com")
         # Initialiser une liste pour stocker les coordonnées
@@ -445,11 +446,6 @@ class Ui_Dialog(object):
         time.sleep(1)
 
     def main(self):
-
-        import time
-        import sys
-
-        start_time = time.time()
         self.init_geo()
         population_set = self.genesis(self.names_list, self.n_population)
         fitness_liste = self.get_all_fitnes(population_set, self.dictionnaire_villes)
@@ -483,8 +479,8 @@ class Ui_Dialog(object):
 
         self.m.location = self.dictionnaire_villes[self.plus_court_chemin[0]]
         end_time = time.time()
-        execution_time = end_time - start_time
-        print("Execution time: ", execution_time)
+        execution_time = end_time - self.start_time
+        self.accumulated_nbr_iteration_label.setText(f"Executer en {round(execution_time,2)}s")
         location_finale = []
         for el in self.plus_court_chemin:
 
