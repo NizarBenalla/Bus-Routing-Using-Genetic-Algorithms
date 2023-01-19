@@ -1,0 +1,19 @@
+Street,City/Town,State/Province/Region,Zip/Postal Code,Phone Number,Country,Latitude,Longitude,Full Name,Gender,Birthday,Social Security Number,Credit card brand,Credit card number,Expire,CVV
+Bayonne,Paris,Paris,75002,01 42 33 50 83,France,48.864701,2.348475,Laure Renault-Lamy,male,9/23/1986,443-44-1098 ,EnRoute,2.14934E+15,2029/5,294
+Pau,Paris,Paris,75002,01 42 33 50 83,France,48.864701,2.348475,Laetitia Bouvet,male,9/23/1986,443-44-1098 ,EnRoute,2.14934E+15,2029/5,294
+Perpignan,Paris,Paris,75002,01 42 33 50 83,France,48.864701,2.348475,Nath Louis,male,9/23/1986,443-44-1098 ,EnRoute,2.14934E+15,2029/5,294
+Montpellier,Paris,Paris,75002,01 42 33 50 83,France,48.864701,2.348475,Anouk Chretien,male,9/23/1986,443-44-1098 ,EnRoute,2.14934E+15,2029/5,294
+Avignon,Paris,Paris,75002,01 42 33 50 83,France,48.864701,2.348475,Édith Noel,male,9/23/1986,443-44-1098 ,EnRoute,2.14934E+15,2029/5,294
+Grenoble,Paris,Paris,75002,01 42 33 50 83,France,48.864701,2.348475,Arthur Couturier,male,9/23/1986,443-44-1098 ,EnRoute,2.14934E+15,2029/5,294
+Lyon,Paris,Paris,75002,01 42 33 50 83,France,48.864701,2.348475,Antoine Hebert,male,9/23/1986,443-44-1098 ,EnRoute,2.14934E+15,2029/5,294
+Dijon,Paris,Paris,75002,01 42 33 50 83,France,48.864701,2.348475,Gérard Guichard-Collet,male,9/23/1986,443-44-1098 ,EnRoute,2.14934E+15,2029/5,294
+Strasbourg,Paris,Paris,75002,01 42 33 50 83,France,48.864701,2.348475,René Le Gomez,male,9/23/1986,443-44-1098 ,EnRoute,2.14934E+15,2029/5,294
+Nancy,Paris,Paris,75002,01 42 33 50 83,France,48.864701,2.348475,Guy Joseph,male,9/23/1986,443-44-1098 ,EnRoute,2.14934E+15,2029/5,294
+Reims,Paris,Paris,75002,01 42 33 50 83,France,48.864701,2.348475,Mathilde Coulon,male,9/23/1986,443-44-1098 ,EnRoute,2.14934E+15,2029/5,294
+Amiens,Paris,Paris,75002,01 42 33 50 83,France,48.864701,2.348475,Marc Barbier,male,9/23/1986,443-44-1098 ,EnRoute,2.14934E+15,2029/5,294
+Rouen,Paris,Paris,75015,,France,48.854008,2.288886,Victor Picard,male,8/23/1979,124-84-4469 ,EnRoute,2.01451E+15,2029/12,238
+Caen,Paris,Paris,75018,01 42 62 24 23,France,48.885236,2.335906,Philippe Joseph-Bertrand,female,12/16/1994,473-73-9405 ,American Express,3.45409E+14,2030/3,279
+Rennes,Paris,Paris,75002,01 42 36 17 65,France,48.864841,2.351744,Brigitte Dumas,female,12/18/1979,733-67-9382 ,Voyager,8.69962E+15,2027/12,594
+Nantes,Paris,Paris,75008,01 44 94 14 70,France,48.868529,2.322995,Patricia Levy,female,6/8/1995,045-07-0437 ,Visa,4.5322E+15,2027/10,731
+La Rochelle,Paris,Paris,75019,01 42 08 92 87,France,48.881364,2.373165,Bertrand Verdier,male,10/1/1985,638-81-4362 ,Diners Club,3.02728E+15,2030/5,774
+Bordeaux,Paris,Paris,75008,01 43 59 06 86,France,48.872043,2.313505,Gilles Aubert,male,5/26/1986,717-67-6218 ,Diners Club,3.02443E+15,2030/6,510

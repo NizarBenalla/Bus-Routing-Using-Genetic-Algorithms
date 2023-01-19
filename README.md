@@ -20,7 +20,7 @@
 - taux_croisement 		: 0.3
 
 ### En ce qui concerne les jeux de données, nous en proposons deux :
-Un jeu de données contenant 10 adresses éloignées ()
-Un autre jeu de données contenant 500 adresses à Paris ()
+- Un jeu de données contenant 10 adresses éloignées (test.csv)
+- Un autre jeu de données contenant 500 adresses à Paris (test1.csv)
 
 *Nous vous conseillons de tester les différentes options et de jouer avec les paramètres pour obtenir les meilleurs résultats. N'hésitez pas à nous contacter en cas de problème ou pour toute suggestion d'amélioration.*
