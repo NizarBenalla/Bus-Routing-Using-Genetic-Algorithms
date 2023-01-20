@@ -34,7 +34,9 @@ class Ui_Dialog(object):
         )
         sizePolicy.setHorizontalStretch(9)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.project_title.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.project_title.sizePolicy().hasHeightForWidth()
+        )
         self.project_title.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(22)
@@ -85,7 +87,9 @@ class Ui_Dialog(object):
         self.upload_btn.clicked.connect(self.upload)
 
         self.accumulated_nbr_iteration_label = QtWidgets.QLabel(self.frame)
-        self.accumulated_nbr_iteration_label.setGeometry(QtCore.QRect(740, 540, 200, 41))
+        self.accumulated_nbr_iteration_label.setGeometry(
+            QtCore.QRect(740, 540, 200, 41)
+        )
         self.result_title = QtWidgets.QLabel(self.frame)
         self.result_title.setGeometry(QtCore.QRect(50, 120, 431, 41))
         font = QtGui.QFont()
@@ -135,10 +139,16 @@ class Ui_Dialog(object):
         self.accumulated_nbr_iteration_label.setFont(font)
         self.accumulated_nbr_iteration_label.setStyleSheet("color:#999")
         self.accumulated_nbr_iteration_label.setAlignment(QtCore.Qt.AlignLeft)
-        self.accumulated_nbr_iteration_label.setObjectName("accumulated_nbr_iteration_label")
+        self.accumulated_nbr_iteration_label.setObjectName(
+            "accumulated_nbr_iteration_label"
+        )
         self.accumulated_nbr_iteration_entry = QtWidgets.QLineEdit(self.frame)
-        self.accumulated_nbr_iteration_entry.setGeometry(QtCore.QRect(230, 420, 181, 31))
-        self.accumulated_nbr_iteration_entry.setObjectName("accumulated_nbr_iteration_entry")
+        self.accumulated_nbr_iteration_entry.setGeometry(
+            QtCore.QRect(230, 420, 181, 31)
+        )
+        self.accumulated_nbr_iteration_entry.setObjectName(
+            "accumulated_nbr_iteration_entry"
+        )
         self.nbr_iteration_entry = QtWidgets.QLabel(self.frame)
         self.nbr_iteration_entry.setGeometry(QtCore.QRect(50, 420, 151, 31))
         font = QtGui.QFont()
@@ -292,7 +302,9 @@ class Ui_Dialog(object):
             location = geolocator.geocode(ville)
             coordinates_list.append(list((location.latitude, location.longitude)))
         # Créer un dictionnaire pour stocker les noms de villes et les coordonnées
-        self.dictionnaire_villes = {x: y for x, y in zip(self.names_list, coordinates_list)}
+        self.dictionnaire_villes = {
+            x: y for x, y in zip(self.names_list, coordinates_list)
+        }
         self.names = {x: y for x, y in zip(self.df["Street"], self.df["Full Name"])}
         self.dict_distances = {}
         self.cree_dictionnaire_distances()
@@ -308,7 +320,6 @@ class Ui_Dialog(object):
                     distance = h3.h3_distance(h3_coord1, h3_coord2)
                     self.dict_distances[(point1, point2)] = distance
 
-    @functools.lru_cache(maxsize=None)
     def calculer_distance_villes(self, city_a, city_b):
         return self.dict_distances[(city_a, city_b)]
 
@@ -429,7 +440,9 @@ class Ui_Dialog(object):
 
     def plot_map(self):
         if self.iteration != 0:
-            self.accumulated_nbr_iteration_label.setText(f"iteration numero {self.iteration * 100}")
+            self.accumulated_nbr_iteration_label.setText(
+                f"iteration numero {self.iteration * 100}"
+            )
 
         self.total_distance_value.setText(f"{round(self.meilleur_solution[1], 3)} Km")
         str_fin = ""
@@ -480,14 +493,20 @@ class Ui_Dialog(object):
         self.m.location = self.dictionnaire_villes[self.plus_court_chemin[0]]
         end_time = time.time()
         execution_time = end_time - self.start_time
-        self.accumulated_nbr_iteration_label.setText(f"Executer en {round(execution_time,2)}s")
+        self.accumulated_nbr_iteration_label.setText(
+            f"Executer en {round(execution_time,2)}s"
+        )
         location_finale = []
         for el in self.plus_court_chemin:
 
             location_finale.append(self.dictionnaire_villes[el])
-            folium.Marker(self.dictionnaire_villes[el], popup=f"<i>{el}</i>").add_to(self.m)
+            folium.Marker(self.dictionnaire_villes[el], popup=f"<i>{el}</i>").add_to(
+                self.m
+            )
         # location_finale.append(self.dictionnaire_villes[self.plus_court_chemin[0]])
-        folium.PolyLine(location_finale, color="blue", weight=4, opacity=0.9).add_to(self.m)
+        folium.PolyLine(location_finale, color="blue", weight=4, opacity=0.9).add_to(
+            self.m
+        )
         self.webView.setHtml(self.m.get_root().render())
         self.webView.update()
         QtCore.QCoreApplication.processEvents()
